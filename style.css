@@ -314,7 +314,7 @@ body.menu-open { overflow: hidden; }
 .proj:last-of-type { border-bottom: 1px solid var(--line-strong); }
 .proj__idx { grid-column: 1 / span 2; color: var(--text-3); padding-top: 0.9em; }
 .proj__head { grid-column: 3 / -1; }
-.proj__title { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4.8vw, 4.4rem); line-height: 1; letter-spacing: -0.03em; transition: color 0.3s, transform 0.5s var(--ease); }
+.proj__title { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4.8vw, 4.4rem); line-height: 1; letter-spacing: -0.03em; transition: color 0.3s, text-indent 0.5s var(--ease); }
 .proj__meta { margin-top: 14px; color: var(--text-2); line-height: 1.8; text-transform: none; font-size: 0.78rem; }
 .proj__meta i { font-style: normal; color: var(--accent-text); padding-inline: 0.5em; }
 .proj__body { grid-column: 3 / -1; display: grid; grid-template-columns: subgrid; column-gap: var(--gap); }
@@ -328,7 +328,8 @@ body.menu-open { overflow: hidden; }
 .tags li { transition: border-color 0.3s, color 0.3s, transform 0.5s var(--ease); }
 .proj:hover .tags li { border-color: var(--accent-text); color: var(--text); }
 .proj:hover .tags li:nth-child(even) { transform: translateY(-2px); }
-.proj:hover .proj__title { color: var(--accent-text); transform: translateX(10px); }
+/* text-indent, not transform: a transform would trap the stretched link inside the title */
+.proj:hover .proj__title { color: var(--accent-text); text-indent: 10px; }
 .proj { transition: background 0.4s; }
 .proj:hover { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 4%, transparent)); }
 
