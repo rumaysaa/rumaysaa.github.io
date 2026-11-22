@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Full-stack E-commerce Platform | Rumaysa Babulkhair</title>
+  <meta name="description" content="Full-stack E-commerce Platform: a site built from scratch at Intelli Vyapar with secure login, a product catalogue and a shopping cart, on Node.js, Express, MS SQL Server and React.">
+  <meta name="theme-color" content="#0c0c0b">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230c0c0b'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='40' text-anchor='middle' fill='%23c6f24e'%3ER%3C/text%3E%3C/svg%3E">
+
+  <!-- Apply theme + JS flag before first paint (no flash, no-JS keeps content visible) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        d.setAttribute('data-theme', t);
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', t === 'light' ? '#f3f0e8' : '#0c0c0b');
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <!-- Fixed slim top bar -->
+  <header class="bar" id="top">
+    <div class="bar__inner">
+      <a class="brand" href="../index.html" aria-label="Rumaysa Babulkhair, home">
+        <span class="brand__mark" aria-hidden="true">R<em>b</em></span>
+      </a>
+      <p class="status"><span class="dot" aria-hidden="true"></span><span class="status__long">Available for full-time roles</span><span class="status__short">Available</span></p>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#work" data-nav aria-current="true">Work</a>
+        <a href="../index.html#about" data-nav>About</a>
+        <a href="../index.html#education" data-nav>Education</a>
+        <a href="../index.html#toolbox" data-nav>Toolbox</a>
+        <a href="../index.html#references" data-nav>References</a>
+        <a href="../index.html#contact" data-nav>Contact</a>
+      </nav>
+
+      <div class="bar__tools">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.5"/>
+            <path d="M12 3.5v17a8.5 8.5 0 0 0 0-17z" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <span class="menu-btn__lines" aria-hidden="true"><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen menu -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <nav class="menu__nav" aria-label="Mobile">
+      <a href="../index.html#work"><span>01</span>Work</a>
+      <a href="../index.html#about"><span>02</span>About</a>
+      <a href="../index.html#education"><span>03</span>Education</a>
+      <a href="../index.html#toolbox"><span>04</span>Toolbox</a>
+      <a href="../index.html#references"><span>05</span>References</a>
+      <a href="../index.html#contact"><span>06</span>Contact</a>
+    </nav>
+    <p class="menu__foot mono">Rumaysa.babulkhair@outlook.com<br>Dublin, Ireland</p>
+  </div>
+
+  <main id="main" class="pp wrap">
+    <a class="pp__back mono" href="../index.html#work"><span aria-hidden="true">&larr;</span> All work</a>
+
+    <header class="pp__head">
+      <p class="pp__kind mono" style="--n:0">Internship</p>
+      <h1 class="pp__title" style="--n:1">Full-stack E&#8209;commerce Platform</h1>
+      <dl class="pp__facts" style="--n:2"><div><dt class="mono">Organisation</dt><dd>Intelli Vyapar</dd></div><div><dt class="mono">Role</dt><dd>Web Developer Intern</dd></div><div><dt class="mono">Dates</dt><dd>Sep &ndash; Dec 2023</dd></div><div><dt class="mono">Location</dt><dd>Surat, India</dd></div></dl>
+    </header>
+
+      <section class="pp__sec reveal"><h2 class="mono">Overview</h2><p class="pp__lead">An online store built from scratch: customers browse, fill a cart and check out, while the team runs products, stock and orders from an admin panel.</p></section>
+
+      <section class="pp__sec reveal"><h2 class="mono">The problem</h2><p>The business needed its own store instead of relying on marketplaces: secure customer accounts, a catalogue it could manage itself, and a cart and checkout that stayed reliable as the product range grew.</p></section>
+
+      <section class="pp__sec reveal"><h2 class="mono">Architecture</h2>
+        <div class="wide">
+          <div class="flow" role="img" aria-label="Three-tier architecture: a React front end calls an Express REST API, which runs authentication and validation middleware and then queries MS SQL Server.">
+            <p class="flow__lane mono">Request path <span>every page and action</span></p>
+            <ol class="flow__row">
+              <li><span class="mono">01</span><b>React UI</b>Catalogue, cart, checkout, admin</li>
+              <li><span class="mono">02</span><b>Express API</b>REST routes per resource</li>
+              <li><span class="mono">03</span><b>Middleware</b>Auth tokens, roles, validation</li>
+              <li class="flow__store"><span class="mono">04</span><b>MS SQL Server</b>Users, products, carts, orders</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="pp__sec reveal"><h2 class="mono">Features</h2>
+        <div class="wide feat-grid">
+          <div class="feat-card">
+            <p class="mono">For customers</p>
+            <ul>
+              <li>Sign-up and login with hashed passwords and token-based sessions</li>
+              <li>Catalogue with categories, search, filters, sorting and pagination</li>
+              <li>Product pages with images, price and live stock</li>
+              <li>Cart saved to the account, with quantity updates and running totals</li>
+              <li>Checkout and order history with order status</li>
+            </ul>
+          </div>
+          <div class="feat-card">
+            <p class="mono">For admins</p>
+            <ul>
+              <li>Create, edit and remove products and categories</li>
+              <li>Stock management, with out-of-stock items flagged</li>
+              <li>Order dashboard to move orders from placed to shipped to delivered</li>
+              <li>Admin-only routes protected by role checks on the API</li>
+            </ul>
+          </div>
+          <div class="feat-card">
+            <p class="mono">Under the hood</p>
+            <ul>
+              <li>REST API organised into Express routers and reusable middleware</li>
+              <li>Relational schema with foreign keys between users, products, carts and orders</li>
+              <li>Parameterised SQL queries to prevent injection</li>
+              <li>Central input validation and consistent error responses</li>
+              <li>Responsive React UI that works on mobile</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="pp__sec reveal"><h2 class="mono">Challenges</h2><div class="wide"><ul class="pp__fix">
+        <li><p><span>Problem</span>Shoppers added items before logging in, then lost their cart when they signed in.</p><p><span>Fix</span>Kept a guest cart in the browser and merged it into the account cart on login.</p></li>
+        <li><p><span>Problem</span>Two customers could buy the last unit of the same product at once.</p><p><span>Fix</span>Checked and decremented stock inside a single database transaction at checkout.</p></li>
+        <li><p><span>Problem</span>Loading the whole catalogue at once made listing pages slow.</p><p><span>Fix</span>Moved filtering and pagination to the server, with indexed SQL queries.</p></li>
+      </ul></div></section>
+
+      <section class="pp__sec reveal"><h2 class="mono">My role</h2><p>Web Developer Intern. I built the Node.js and Express backend end to end: the database schema, REST API, authentication, and the cart and order logic. I also built the React pages for the catalogue and cart.</p></section>
+
+      <section class="pp__sec reveal"><h2 class="mono">Tech stack</h2><div><ul class="tags" aria-label="Technologies"><li>React</li><li>Node.js</li><li>Express</li><li>MS SQL Server</li><li>REST API</li><li>JWT</li><li>bcrypt</li></ul></div></section>
+
+      <section class="pp__sec reveal"><h2 class="mono">Outcome</h2><p class="pp__lead">A complete store from catalogue to checkout, on a backend that handled every server request and API call reliably.</p></section>
+
+
+    <a class="pp__next reveal" href="ai-study-buddy.html">
+      <span class="mono">Next project</span>
+      <strong>AI Study Buddy <span aria-hidden="true">&rarr;</span></strong>
+    </a>
+  </main>
+
+  <footer class="foot wrap">
+    <p class="mono">&copy; <span id="year">2026</span> Rumaysa Babulkhair</p>
+    <p class="mono">Dublin, IE <span class="foot__time" id="dublin-time" aria-label="Local time in Dublin"></span></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rumaysa Babulkhair | Software &amp; AI Engineer</title>
+  <meta name="description" content="Rumaysa Babulkhair is a Software and AI engineer in Dublin, Ireland. She builds full-stack products and private, local-LLM systems, and is open to full-time roles.">
+  <meta name="theme-color" content="#0c0c0b">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230c0c0b'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='40' text-anchor='middle' fill='%23c6f24e'%3ER%3C/text%3E%3C/svg%3E">
+
+  <!-- Apply theme + JS flag before first paint (no flash, no-JS keeps content visible) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        d.setAttribute('data-theme', t);
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', t === 'light' ? '#f3f0e8' : '#0c0c0b');
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <!-- Fixed slim top bar -->
+  <header class="bar" id="top">
+    <div class="bar__inner">
+      <a class="brand" href="#top" aria-label="Rumaysa Babulkhair, back to top">
+        <span class="brand__mark" aria-hidden="true">R<em>b</em></span>
+      </a>
+      <p class="status"><span class="dot" aria-hidden="true"></span><span class="status__long">Available for full-time roles</span><span class="status__short">Available</span></p>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#work" data-nav>Work</a>
+        <a href="#about" data-nav>About</a>
+        <a href="#education" data-nav>Education</a>
+        <a href="#toolbox" data-nav>Toolbox</a>
+        <a href="#references" data-nav>References</a>
+        <a href="#contact" data-nav>Contact</a>
+      </nav>
+
+      <div class="bar__tools">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.5"/>
+            <path d="M12 3.5v17a8.5 8.5 0 0 0 0-17z" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <span class="menu-btn__lines" aria-hidden="true"><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen menu -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <nav class="menu__nav" aria-label="Mobile">
+      <a href="#work"><span>01</span>Work</a>
+      <a href="#about"><span>02</span>About</a>
+      <a href="#education"><span>03</span>Education</a>
+      <a href="#toolbox"><span>04</span>Toolbox</a>
+      <a href="#references"><span>05</span>References</a>
+      <a href="#contact"><span>06</span>Contact</a>
+    </nav>
+    <p class="menu__foot mono">Rumaysa.babulkhair@outlook.com<br>Dublin, Ireland</p>
+  </div>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero__meta mono" style="--d:0">
+        <span>Portfolio / 2026</span>
+        <span>Dublin, IE &nbsp;53.35&deg;N 6.26&deg;W</span>
+      </div>
+
+      <h1 class="hero__title" id="hero-title">
+        <span class="line" style="--d:1"><span>Rumaysa</span></span>
+        <span class="line" style="--d:2"><span><em>Babulkhair</em><sup class="mono">Software &amp; AI Engineer</sup></span></span>
+      </h1>
+
+      <div class="hero__row">
+        <div class="hero__copy" style="--d:3">
+          <p class="hero__lede">I build full-stack products and private, local-LLM systems that actually ship.</p>
+          <div class="cta">
+            <a class="btn btn--primary" href="#work">View work <span class="arr" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn--ghost" href="mailto:Rumaysa.babulkhair@outlook.com">Email me <span class="arr" aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <p class="hero__note mono" style="--d:4">
+          M.Sc. Computer Science, TU Dublin<br>
+          Seeking full-time Software / AI engineering roles
+        </p>
+      </div>
+
+      <!-- Toast shown when an email link is clicked (address is also copied) -->
+      <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+      <span class="sr" id="copy-status" role="status" aria-live="polite"></span>
+
+      <!-- The memorable thing: animated RAG pipeline, drawn by script.js -->
+      <figure class="fig" style="--d:5">
+        <figcaption class="fig__intro">
+          <div>
+            <p class="fig__eyebrow mono">What I build</p>
+            <h2 class="fig__title">AI that answers from <em>your own</em> documents.</h2>
+            <p class="fig__sub">One private RAG pipeline behind two projects: <strong>AI Study Buddy</strong>, my M.Sc. final-year project, and a <strong>confidential legal-document search</strong> at Hexacorp.</p>
+          </div>
+          <div class="fig__actions">
+            <a class="fig__link mono" href="#work">See both projects <span aria-hidden="true">&rarr;</span></a>
+            <button class="fig__pause mono" id="pipe-toggle" type="button" aria-pressed="false">Pause animation</button>
+          </div>
+        </figcaption>
+        <div class="fig__stage" id="pipeline" role="img" aria-label="Diagram of the RAG pipeline in six steps: upload documents, split them into passages, embed passages as vectors, retrieve the passages that match a question, generate a response with a private LLM, and return a grounded answer, policy lookup, summary or quiz. Used in AI Study Buddy and in a confidential document search at Hexacorp."></div>
+        <p class="fig__legend" id="pipe-legend"><span class="fig__step mono" id="pipe-step">01 / Upload</span><span id="pipe-text">Lecture notes, slides or legal policies go in (OCR for handwriting).</span></p>
+      </figure>
+
+      <dl class="stats" style="--d:6">
+        <div><dt class="mono">Internships</dt><dd><span class="num">3</span></dd></div>
+        <div><dt class="mono">Degrees (M.Sc. + B.E.)</dt><dd><span class="num">2</span></dd></div>
+        <div><dt class="mono">Documents indexed in a private RAG system</dt><dd><span class="num">25+</span></dd></div>
+        <div><dt class="mono">Team efficiency gain, Algobrain platform</dt><dd><span class="num">~20%</span></dd></div>
+      </dl>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="sec wrap" id="work" aria-labelledby="work-title">
+      <header class="sec-head reveal">
+        <span class="sec-num" aria-hidden="true">01</span>
+        <div>
+          <p class="eyebrow mono">Work &amp; internships</p>
+          <h2 id="work-title">Four projects, <em>end to end</em>.</h2>
+        </div>
+      </header>
+
+      <article class="proj reveal">
+        <div class="proj__idx mono" aria-hidden="true">01</div>
+        <div class="proj__head">
+          <p class="proj__kind mono">M.Sc. project</p>
+          <h3 class="proj__title"><a class="proj__a" href="projects/ai-study-buddy.html">AI Study Buddy</a></h3>
+          <p class="proj__meta mono">M.Sc. final-year project <i>/</i> <span class="nw">2025&ndash;2026</span> <i>/</i> Project Lead</p>
+        </div>
+        <div class="proj__body">
+          <p class="proj__desc">A full-stack AI study platform built around a local LLM. Upload documents or handwritten notes (read with OCR) and RAG turns them into quizzes, recap cards and an AI tutor. Includes a demo video.</p>
+          <div class="proj__aside"><ul class="tags" aria-label="Technologies">
+            <li>Local LLM</li><li>RAG</li><li>Ollama</li><li>Python</li><li>React</li><li>OCR</li>
+          </ul>
+          <p class="proj__more mono" aria-hidden="true">View project <span class="arr">&rarr;</span></p></div>
+        </div>
+      </article>
+      <article class="proj reveal">
+        <div class="proj__idx mono" aria-hidden="true">02</div>
+        <div class="proj__head">
+          <p class="proj__kind mono">Internship</p>
+          <h3 class="proj__title"><a class="proj__a" href="projects/employee-management-platform.html">Employee Management Platform</a></h3>
+          <p class="proj__meta mono">Algobrain AI <i>/</i> AI &amp; ML Intern <i>/</i> <span class="nw">Aug 2023 &ndash; May 2024</span> <i>/</i> Surat, India <i>/</i> Project Lead</p>
+        </div>
+        <div class="proj__body">
+          <p class="proj__desc">An internal platform for tracking employee time and project progress, which left the team about 20% more efficient. Check-in and check-out run on face recognition (computer vision), and multi-level role-based access control covers every module. I was Project Lead.</p>
+          <div class="proj__aside"><ul class="tags" aria-label="Technologies">
+            <li>Python (Flask)</li><li>JavaScript</li><li>MongoDB</li><li>Computer Vision</li><li>RBAC</li>
+          </ul>
+          <p class="proj__more mono" aria-hidden="true">View project <span class="arr">&rarr;</span></p></div>
+        </div>
+      </article>
+      <article class="proj reveal">
+        <div class="proj__idx mono" aria-hidden="true">03</div>
+        <div class="proj__head">
+          <p class="proj__kind mono">Internship</p>
+          <h3 class="proj__title"><a class="proj__a" href="projects/confidential-rag-system.html">Confidential RAG System</a></h3>
+          <p class="proj__meta mono">Hexacorp Technical Services <i>/</i> AI Research &amp; Solutions Intern <i>/</i> <span class="nw">Jul &ndash; Aug 2023</span> <i>/</i> Remote</p>
+        </div>
+        <div class="proj__body">
+          <p class="proj__desc">Turned 25+ messy legal and policy documents into a searchable knowledge base for an LLM. I compared OpenAI against self-hosted models (Ollama) so company data stayed secure and compliant on Azure.</p>
+          <div class="proj__aside"><ul class="tags" aria-label="Technologies">
+            <li>RAG</li><li>Ollama</li><li>OpenAI</li><li>Azure AI</li>
+          </ul>
+          <p class="proj__more mono" aria-hidden="true">View project <span class="arr">&rarr;</span></p></div>
+        </div>
+      </article>
+      <article class="proj reveal">
+        <div class="proj__idx mono" aria-hidden="true">04</div>
+        <div class="proj__head">
+          <p class="proj__kind mono">Internship</p>
+          <h3 class="proj__title"><a class="proj__a" href="projects/ecommerce-platform.html">Full-stack E&#8209;commerce Platform</a></h3>
+          <p class="proj__meta mono">Intelli Vyapar <i>/</i> Web Developer Intern <i>/</i> <span class="nw">Sep &ndash; Dec 2023</span> <i>/</i> Surat, India</p>
+        </div>
+        <div class="proj__body">
+          <p class="proj__desc">Built from scratch: secure login, a product catalogue and a shopping cart. A Node.js and Express API on MS SQL Server serves a React front end.</p>
+          <div class="proj__aside"><ul class="tags" aria-label="Technologies">
+            <li>React</li><li>Node.js</li><li>Express</li><li>MS SQL Server</li>
+          </ul>
+          <p class="proj__more mono" aria-hidden="true">View project <span class="arr">&rarr;</span></p></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="sec wrap" id="about" aria-labelledby="about-title">
+      <header class="sec-head reveal">
+        <span class="sec-num" aria-hidden="true">02</span>
+        <div>
+          <p class="eyebrow mono">About</p>
+          <h2 id="about-title">Curious, <em>methodical</em>, a little stubborn about bugs.</h2>
+        </div>
+      </header>
+
+      <div class="about">
+        <figure class="mono-card mono-card--photo reveal">
+          <picture>
+            <source srcset="assets/rumaysa-portrait.webp" type="image/webp">
+            <img class="mono-card__photo" src="assets/rumaysa-portrait.png" alt="Portrait of Rumaysa Babulkhair smiling, wearing a brown wool coat and grey scarf" width="944" height="1400" loading="lazy" decoding="async">
+          </picture>
+          <span class="mono-card__tl mono" aria-hidden="true">RB</span>
+          <span class="mono-card__tr mono" aria-hidden="true">53.35&deg;N<br>6.26&deg;W</span>
+          <span class="mono-card__bl mono" aria-hidden="true">Dublin, Ireland</span>
+          <span class="mono-card__br mono" aria-hidden="true">Software &amp; AI</span>
+        </figure>
+
+        <div class="about__text reveal">
+          <p class="about__lead">I&rsquo;m a computer scientist based in Dublin who likes building things end to end, from the database to the interface, and increasingly around language models that run on your own machine.</p>
+          <p>I led the technical team as Project Lead during my Algobrain internship and again on my M.Sc. group project. What I&rsquo;m good at: finding bugs quickly, and researching my way to the right tool instead of reaching for the familiar one.</p>
+          <p>Away from the keyboard I read, listen to music and travel.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="sec wrap" id="education" aria-labelledby="edu-title">
+      <header class="sec-head reveal">
+        <span class="sec-num" aria-hidden="true">03</span>
+        <div>
+          <p class="eyebrow mono">Education</p>
+          <h2 id="edu-title">Two degrees, <em>one direction</em>.</h2>
+        </div>
+      </header>
+
+      <ol class="tl">
+        <li class="tl__row reveal">
+          <p class="tl__date mono">Sep 2024 &ndash; Mar 2026</p>
+          <div class="tl__main">
+            <h3>M.Sc. Computer Science <span>Advanced Software Development</span></h3>
+            <p class="tl__org">Technological University Dublin <i class="mono">GPA 3.4</i></p>
+            <p class="tl__note">Final-year project: AI Study Buddy, a group project where I was Project Lead.</p>
+          </div>
+        </li>
+        <li class="tl__row reveal">
+          <p class="tl__date mono">Jun 2020 &ndash; Jun 2024</p>
+          <div class="tl__main">
+            <h3>B.E. Computer Science</h3>
+            <p class="tl__org">Gujarat Technological University <i class="mono">GPA 3.8</i></p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ TOOLBOX ============ -->
+    <section class="sec wrap" id="toolbox" aria-labelledby="tool-title">
+      <header class="sec-head reveal">
+        <span class="sec-num" aria-hidden="true">04</span>
+        <div>
+          <p class="eyebrow mono">Toolbox</p>
+          <h2 id="tool-title">What I <em>reach for</em>.</h2>
+        </div>
+      </header>
+
+      <dl class="kit">
+        <div class="kit__row reveal">
+          <dt class="mono"><span>A</span>AI / LLM</dt>
+          <dd><span>RAG<i>/</i></span> <span>Local LLMs<i>/</i></span> <span>Ollama<i>/</i></span> <span>NLP<i>/</i></span> <span>Conversational AI<i>/</i></span> <span>Commercial LLMs (GPT)</span></dd>
+        </div>
+        <div class="kit__row reveal">
+          <dt class="mono"><span>B</span>Languages &amp; frameworks</dt>
+          <dd><span>Python<i>/</i></span> <span>JavaScript<i>/</i></span> <span>Java<i>/</i></span> <span>React.js<i>/</i></span> <span>Node.js<i>/</i></span> <span>Express.js<i>/</i></span> <span>Flask</span></dd>
+        </div>
+        <div class="kit__row reveal">
+          <dt class="mono"><span>C</span>Data</dt>
+          <dd><span>MongoDB<i>/</i></span> <span>MS SQL Server<i>/</i></span> <span>SQL</span></dd>
+        </div>
+        <div class="kit__row reveal">
+          <dt class="mono"><span>D</span>DevOps &amp; cloud</dt>
+          <dd><span>Docker<i>/</i></span> <span>CI/CD<i>/</i></span> <span>Git &amp; GitHub<i>/</i></span> <span>Azure AI Services</span></dd>
+        </div>
+        <div class="kit__row reveal">
+          <dt class="mono"><span>E</span>Practices</dt>
+          <dd><span>Scrum<i>/</i></span> <span>Agile<i>/</i></span> <span>RBAC</span></dd>
+        </div>
+      </dl>
+
+      <div class="certs reveal">
+        <h3 class="mono">Certifications</h3>
+        <ul>
+          <li>Google Cloud Computing Foundations <span class="mono">NPTEL</span></li>
+          <li>Introduction to NLP <span class="mono">Infosys</span></li>
+          <li>AngularJS <span class="mono">Infosys</span></li>
+          <li>Data Mining <span class="mono">NPTEL</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ REFERENCES ============ -->
+    <section class="sec wrap" id="references" aria-labelledby="ref-title">
+      <header class="sec-head reveal">
+        <span class="sec-num" aria-hidden="true">05</span>
+        <div>
+          <p class="eyebrow mono">References</p>
+          <h2 id="ref-title">In my <em>mentor&rsquo;s</em> words.</h2>
+        </div>
+      </header>
+
+      <figure class="ref reveal">
+        <blockquote class="ref__body">
+          <p class="ref__pull">What stood out most was her communication skills, both within the team and during presentations.</p>
+          <div class="ref__full">
+            <p>I was Rumaysa&rsquo;s mentor for her capstone team project as part of the Master&rsquo;s in Computer Science programme at Technological University Dublin. She demonstrated outstanding leadership and teamwork throughout the project, as well as exceptional technical skills. She took initiative in coordinating tasks, supported her peers, and kept the team aligned with project goals and deadlines. She created a collaborative environment where ideas were clearly communicated and thoughtfully discussed.</p>
+            <div class="ref__more" id="ref-more"><div class="ref__more-inner">
+              <p>From a technical perspective, Rumaysa showed a very strong proficiency in software development and artificial intelligence concepts. She was particularly effective in applying practical problem-solving skills, contributing to system design decisions, and communicating complex technical ideas in a clear and structured manner. Her ability to bridge technical implementation with conceptual understanding was a key strength of the team.</p>
+              <p>What stood out most was her communication skills, both within the team and during presentations. She consistently conveyed ideas with confidence and clarity, making her a reliable point of contact and a natural leader within the group.</p>
+              <p>I would confidently recommend Rumaysa for graduate software engineering, AI/ML, or research-oriented roles. She would be a valuable addition to any team seeking someone who combines strong technical ability with leadership and excellent communication skills.</p>
+            </div></div>
+          </div>
+          <button class="ref__toggle mono" id="ref-toggle" type="button" aria-expanded="false" aria-controls="ref-more"><span class="ref__toggle-t">Read the full recommendation</span> <span class="ref__toggle-i" aria-hidden="true">+</span></button>
+        </blockquote>
+        <figcaption class="ref__who">
+          <span class="ref__mono" aria-hidden="true">DG</span>
+          <span>
+            <strong>Damian T. Gordon</strong>
+            <span class="ref__role">Lecturer, Computer Science, Technological University Dublin</span>
+            <span class="ref__meta mono">M.Sc. capstone mentor &middot; LinkedIn recommendation &middot; Jan 2026</span>
+          </span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="sec wrap contact" id="contact" aria-labelledby="contact-title">
+      <header class="sec-head reveal">
+        <span class="sec-num" aria-hidden="true">06</span>
+        <div><p class="eyebrow mono">Contact</p></div>
+      </header>
+      <h2 class="contact__title reveal" id="contact-title">Let&rsquo;s build <em>something.</em></h2>
+      <div class="contact__row reveal">
+        <a class="mail" href="mailto:Rumaysa.babulkhair@outlook.com" aria-label="Email Rumaysa.babulkhair@outlook.com">
+          <span class="mail__addr">Rumaysa.babulkhair@outlook.com</span>
+          <span class="mail__hint mono">Email <span aria-hidden="true">&nearr;</span></span>
+        </a>
+        <button class="copy-btn mono" id="copy-mail" type="button" data-email="Rumaysa.babulkhair@outlook.com" aria-label="Copy email address">
+          <span class="mail__idle">Copy address</span>
+        </button>
+      </div>
+      <ul class="social reveal">
+        <li><a class="ulink" href="https://github.com/rumaysaa" target="_blank" rel="noopener">GitHub <span aria-hidden="true">&nearr;</span></a></li>
+        <li><a class="ulink" href="https://www.linkedin.com/in/rumaysa-babulkhair" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&nearr;</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <p class="mono">&copy; <span id="year">2026</span> Rumaysa Babulkhair</p>
+    <p class="mono">Dublin, IE <span class="foot__time" id="dublin-time" aria-label="Local time in Dublin"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

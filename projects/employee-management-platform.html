@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Management Platform | Rumaysa Babulkhair</title>
+  <meta name="description" content="Employee Management Platform: an internal platform built at Algobrain AI to track employee time and project progress, with face-recognition check-in and role-based access control.">
+  <meta name="theme-color" content="#0c0c0b">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230c0c0b'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='40' text-anchor='middle' fill='%23c6f24e'%3ER%3C/text%3E%3C/svg%3E">
+
+  <!-- Apply theme + JS flag before first paint (no flash, no-JS keeps content visible) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        d.setAttribute('data-theme', t);
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', t === 'light' ? '#f3f0e8' : '#0c0c0b');
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <!-- Fixed slim top bar -->
+  <header class="bar" id="top">
+    <div class="bar__inner">
+      <a class="brand" href="../index.html" aria-label="Rumaysa Babulkhair, home">
+        <span class="brand__mark" aria-hidden="true">R<em>b</em></span>
+      </a>
+      <p class="status"><span class="dot" aria-hidden="true"></span><span class="status__long">Available for full-time roles</span><span class="status__short">Available</span></p>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#work" data-nav aria-current="true">Work</a>
+        <a href="../index.html#about" data-nav>About</a>
+        <a href="../index.html#education" data-nav>Education</a>
+        <a href="../index.html#toolbox" data-nav>Toolbox</a>
+        <a href="../index.html#references" data-nav>References</a>
+        <a href="../index.html#contact" data-nav>Contact</a>
+      </nav>
+
+      <div class="bar__tools">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.5"/>
+            <path d="M12 3.5v17a8.5 8.5 0 0 0 0-17z" fill="currentColor" stroke="none"/>
+          </svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <span class="menu-btn__lines" aria-hidden="true"><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen menu -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <nav class="menu__nav" aria-label="Mobile">
+      <a href="../index.html#work"><span>01</span>Work</a>
+      <a href="../index.html#about"><span>02</span>About</a>
+      <a href="../index.html#education"><span>03</span>Education</a>
+      <a href="../index.html#toolbox"><span>04</span>Toolbox</a>
+      <a href="../index.html#references"><span>05</span>References</a>
+      <a href="../index.html#contact"><span>06</span>Contact</a>
+    </nav>
+    <p class="menu__foot mono">Rumaysa.babulkhair@outlook.com<br>Dublin, Ireland</p>
+  </div>
+
+  <main id="main" class="pp wrap">
+    <a class="pp__back mono" href="../index.html#work"><span aria-hidden="true">&larr;</span> All work</a>
+
+    <header class="pp__head">
+      <p class="pp__kind mono" style="--n:0">Internship</p>
+      <h1 class="pp__title" style="--n:1">Employee Management Platform</h1>
+      <dl class="pp__facts" style="--n:2"><div><dt class="mono">Organisation</dt><dd>Algobrain AI</dd></div><div><dt class="mono">Role</dt><dd>AI &amp; ML Intern</dd></div><div><dt class="mono">Dates</dt><dd>Aug 2023 &ndash; May 2024</dd></div><div><dt class="mono">Location</dt><dd>Surat, India</dd></div></dl>
+    </header>
+
+      <section class="pp__sec reveal"><h2 class="mono">Overview</h2><p class="pp__lead"><em>Workspace</em>: Algobrain AI&rsquo;s in-house platform for attendance, projects, tasks and leave, with face-recognition check-in.</p></section>
+
+      <section class="pp__sec reveal"><h2 class="mono">The problem</h2><p>We studied tools like Zoho and Jira. Off-the-shelf systems had weak task management and employee monitoring, limited security and poor reporting, and none used AI for attendance. The company wanted one place to run its day-to-day work.</p></section>
+
+      <section class="pp__sec reveal"><h2 class="mono">What I built</h2><div class="wide"><ul class="pp__list">
+        <li>Face-recognition check-in and check-out with a live session timer. Admins enrol each employee with a short face video.</li>
+        <li>Attendance and working-hours tracking with location capture, plus an admin dashboard of hours and attendance reports.</li>
+        <li>Role-based access control: separate admin and employee panels, with admins managing users, roles and permissions.</li>
+        <li>Projects and tasks: project management, task assignment and a Kanban board (backlog, to do, review, done).</li>
+        <li>Leave requests with admin approval, holidays, an events calendar, announcements and notifications.</li>
+      </ul></div></section>
+
+      <section class="pp__sec reveal"><h2 class="mono">Screens</h2>
+        <div class="wide">
+          <div class="slider" data-slider aria-roledescription="carousel" aria-label="Workspace screenshots">
+            <div class="slider__groups" role="group" aria-label="Jump to">
+              <button type="button" class="slider__group" data-goto="0" aria-pressed="true">Admin panel <span class="mono">06</span></button>
+              <button type="button" class="slider__group" data-goto="6" aria-pressed="false">Employee app <span class="mono">04</span></button>
+            </div>
+            <div class="slider__frame">
+              <div class="slider__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+              <ul class="slider__track" tabindex="0" aria-label="Slides, scroll or use arrow keys">
+                <li class="slider__slide" data-group="admin" aria-roledescription="slide" aria-label="1 of 10: Admin dashboard">
+                  <p class="slider__cap"><span class="slider__tag slider__tag--admin mono">Admin panel</span><b>Admin dashboard</b> Live headcount, ongoing projects and working hours per employee.</p>
+                  <img src="../assets/projects/algobrain-admin-dashboard.jpg" alt="Admin dashboard with active, inactive and outside-office counts, ongoing projects and a working-hours chart per employee." loading="lazy" width="1600" height="778">
+                </li>
+                <li class="slider__slide" data-group="admin" aria-roledescription="slide" aria-label="2 of 10: Attendance calendar">
+                  <p class="slider__cap"><span class="slider__tag slider__tag--admin mono">Admin panel</span><b>Attendance calendar</b> Pick any employee and see their presence day by day.</p>
+                  <img src="../assets/projects/algobrain-attendance-calendar.jpg" alt="Admin attendance calendar for one employee, marking present days across March 2024." loading="lazy" width="1600" height="778">
+                </li>
+                <li class="slider__slide" data-group="admin" aria-roledescription="slide" aria-label="3 of 10: Leave requests">
+                  <p class="slider__cap"><span class="slider__tag slider__tag--admin mono">Admin panel</span><b>Leave requests</b> Review, approve or reject leave with a message to the employee.</p>
+                  <img src="../assets/projects/algobrain-admin-leave.jpg" alt="Admin leave requests with dates, reason, status and approve or reject buttons." loading="lazy" width="1600" height="778">
+                </li>
+                <li class="slider__slide" data-group="admin" aria-roledescription="slide" aria-label="4 of 10: Project management">
+                  <p class="slider__cap"><span class="slider__tag slider__tag--admin mono">Admin panel</span><b>Project management</b> Create projects, assign contributors and leads, edit or delete.</p>
+                  <img src="../assets/projects/algobrain-admin-projects.jpg" alt="Admin project list with start and end dates, contributors, technical and project leaders, and actions." loading="lazy" width="1600" height="778">
+                </li>
+                <li class="slider__slide" data-group="admin" aria-roledescription="slide" aria-label="5 of 10: Events calendar">
+                  <p class="slider__cap"><span class="slider__tag slider__tag--admin mono">Admin panel</span><b>Events calendar</b> Schedule company events and meetings, then edit or delete them.</p>
+                  <img src="../assets/projects/algobrain-admin-events.jpg" alt="Admin events calendar for March 2024 with meetings, a tech talk and a casual day." loading="lazy" width="1600" height="778">
+                </li>
+                <li class="slider__slide" data-group="admin" aria-roledescription="slide" aria-label="6 of 10: Announcements">
+                  <p class="slider__cap"><span class="slider__tag slider__tag--admin mono">Admin panel</span><b>Announcements</b> Send notices to everyone and see who has read them.</p>
+                  <img src="../assets/projects/algobrain-admin-announcements.jpg" alt="Admin announcements page with a workshop notice open and a form to send a new announcement." loading="lazy" width="1600" height="778">
+                </li>
+                <li class="slider__slide" data-group="employee" aria-roledescription="slide" aria-label="7 of 10: Face-recognition check-in">
+                  <p class="slider__cap"><span class="slider__tag slider__tag--employee mono">Employee app</span><b>Face-recognition check-in</b> The session timer starts once the camera recognises the employee.</p>
+                  <img src="../assets/projects/algobrain-face-checkin.jpg" alt="Employee dashboard recognising the user's face before check-in, with a session timer, own timesheet and team timesheet." loading="lazy" width="1600" height="778">
+                </li>
+                <li class="slider__slide" data-group="employee" aria-roledescription="slide" aria-label="8 of 10: My projects">
+                  <p class="slider__cap"><span class="slider__tag slider__tag--employee mono">Employee app</span><b>My projects</b> Role, deadlines and days left on every project at a glance.</p>
+                  <img src="../assets/projects/algobrain-projects.jpg" alt="Project cards showing role (contributor or leader), start and end dates and days remaining." loading="lazy" width="1600" height="778">
+                </li>
+                <li class="slider__slide" data-group="employee" aria-roledescription="slide" aria-label="9 of 10: Task board">
+                  <p class="slider__cap"><span class="slider__tag slider__tag--employee mono">Employee app</span><b>Task board</b> Kanban across backlog, to do, review and done.</p>
+                  <img src="../assets/projects/algobrain-kanban.jpg" alt="Kanban board with backlog, to do, review and done columns of project tasks." loading="lazy" width="1600" height="778">
+                </li>
+                <li class="slider__slide" data-group="employee" aria-roledescription="slide" aria-label="10 of 10: Notifications">
+                  <p class="slider__cap"><span class="slider__tag slider__tag--employee mono">Employee app</span><b>Notifications</b> Admin notices land in each employee&rsquo;s feed.</p>
+                  <img src="../assets/projects/algobrain-announcements.jpg" alt="Employee notifications feed with a workshop announcement open." loading="lazy" width="1600" height="778">
+                </li>
+              </ul>
+            </div>
+            <div class="slider__controls">
+              <p class="slider__count mono" aria-live="polite"><span data-cur>01</span> / <span data-total>10</span></p>
+              <div class="slider__dots" role="tablist" aria-label="Choose slide"></div>
+              <div class="slider__btns">
+                <button class="slider__btn" type="button" data-prev aria-label="Previous screenshot"><span aria-hidden="true">&larr;</span></button>
+                <button class="slider__btn" type="button" data-next aria-label="Next screenshot"><span aria-hidden="true">&rarr;</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pp__sec reveal"><h2 class="mono">Challenges</h2><div class="wide"><ul class="pp__fix">
+        <li><p><span>Problem</span>Low-quality laptop cameras produced hazy images, so faces often weren&rsquo;t detected.</p><p><span>Fix</span>Let employees check in with their phone camera when their laptop camera wasn&rsquo;t good enough.</p></li>
+        <li><p><span>Problem</span>IP-based location was often wrong, which broke location-dependent check-in.</p><p><span>Fix</span>Switched to GPS geolocation from the device for accurate positions.</p></li>
+      </ul></div></section>
+
+      <section class="pp__sec reveal"><h2 class="mono">My role</h2><p>Project Lead. I owned the backend in Flask and MongoDB and built and styled the web pages, working with a fellow intern on the front end. During training I also built a CSV upload tool that produced insights with machine-learning models.</p></section>
+
+      <section class="pp__sec reveal"><h2 class="mono">Tech stack</h2><div><ul class="tags" aria-label="Technologies"><li>Python</li><li>Flask</li><li>MongoDB</li><li>JavaScript</li><li>HTML / CSS</li><li>Bootstrap</li><li>Face recognition</li><li>RBAC</li></ul></div></section>
+
+      <section class="pp__sec reveal"><h2 class="mono">Outcome</h2><p class="pp__lead">Rolled out as the company&rsquo;s own workspace, and the team worked about 20% more efficiently.</p></section>
+
+    <a class="pp__next reveal" href="confidential-rag-system.html">
+      <span class="mono">Next project</span>
+      <strong>Confidential RAG System <span aria-hidden="true">&rarr;</span></strong>
+    </a>
+  </main>
+
+  <footer class="foot wrap">
+    <p class="mono">&copy; <span id="year">2026</span> Rumaysa Babulkhair</p>
+    <p class="mono">Dublin, IE <span class="foot__time" id="dublin-time" aria-label="Local time in Dublin"></span></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
