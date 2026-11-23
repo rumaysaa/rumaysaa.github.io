@@ -2,7 +2,7 @@
 
 **Live site: [rumaysaa.github.io](https://rumaysaa.github.io)**
 
-Personal portfolio of Rumaysa Babulkhair, Software & AI Engineer based in Dublin, Ireland
+Personal portfolio:  Rumaysa Babulkhair, Software & AI Engineer based in Dublin, Ireland
 (M.Sc. Computer Science, Technological University Dublin).
 
 ## What's inside
